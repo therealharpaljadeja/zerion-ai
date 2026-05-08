@@ -65,6 +65,22 @@ zerion send 0x3bd359C1119dA7Da1D913D1C4D2B7c461115433A 0.5 \
   --to 0x... --chain monad
 ```
 
+## Token not listed below? Check the official token list
+
+If the token an agent needs is not in the curated tables below, look it up in the official Monad token list — a Uniswap-style `tokens[]` array maintained at <https://github.com/monad-crypto/token-list>.
+
+```bash
+# Mainnet — find a token by symbol or name
+curl -s https://raw.githubusercontent.com/monad-crypto/token-list/main/tokenlist-mainnet.json \
+  | jq '.tokens[] | select(.symbol == "WETH")'
+
+# Testnet
+curl -s https://raw.githubusercontent.com/monad-crypto/token-list/main/tokenlist-testnet.json \
+  | jq '.tokens[] | select(.symbol == "USDC")'
+```
+
+Each entry has `{ symbol, name, address, decimals, chainId, logoURI }`. Pull `address` and pass it to `zerion swap` / `bridge` / `send`. Still verify with `cast code` (above) before sending value.
+
 ## Bridged stablecoins on Monad mainnet
 
 | Symbol | Name | Address |
