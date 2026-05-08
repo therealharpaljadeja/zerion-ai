@@ -45,6 +45,7 @@ Convert one token to another **on the same chain**. For cross-chain conversion u
 zerion swap base 1 USDC ETH
 zerion swap ethereum 0.1 ETH USDC
 zerion swap arbitrum 100 USDC DAI
+zerion swap monad 1 USDC MON
 
 # Solana same-chain swap
 zerion swap solana 0.1 SOL USDC
@@ -78,6 +79,7 @@ Move (and optionally swap) tokens **between chains**. Bridge with the same token
 # Same-token bridge between EVM chains
 zerion bridge base USDC 5 arbitrum USDC
 zerion bridge ethereum USDC 100 polygon USDC
+zerion bridge base USDC 10 monad USDC
 
 # Bridge + swap on destination
 zerion bridge base USDC 5 arbitrum ETH
